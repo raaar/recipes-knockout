@@ -7,28 +7,15 @@ function IngredientsViewModel() {
     this.showFavourites = ko.observable(false);
     this.showSearch = ko.observable(true);
 
-
-	var term = $('.ingredientTags').val();
-	console.log(term);
-
 	this.searchTags = function() {
-		this.getData(list); 
-	}
-
-	this.addIngredient = function() {
-		if (this.itemToAdd() != "") {
-			// fix multiple items separated by comma
-			var x = this.itemToAdd().split(",");
-
-			for ( i = 0 ; i < x.length ; i++){
-				this.ingredientList.push(x[i]);
-				this.itemToAdd("");
-			}
-        }
-	}
-
-	this.removeIngredient = function(x) {
-		self.ingredientList.remove(x);
+		var terms = $('.ingredientTags').val();		
+		//var yummlyJson = 'http://api.yummly.com/v1/api/recipes?_app_id=3d201ae5&_app_key=9da85e4d69408c34a30d4afa7ce7c549&callback=&' + terms + '&callback=?';
+		var yummlyJson = 'http://api.yummly.com/v1/api/recipes?_app_id=3d201ae5&_app_key=9da85e4d69408c34a30d4afa7ce7c549&q='+ terms +'&callback=?';
+		
+		$.getJSON( yummlyJson , function(data) {
+    		console.log(data);	
+    		self.firstName(data.matches);
+		});	
 	}
 
 	this.search = function() {

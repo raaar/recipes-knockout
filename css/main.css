@@ -97,6 +97,7 @@ textarea {
     clear: both;
     overflow: hidden;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .list-item img {
     float: left;

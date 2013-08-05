@@ -52,54 +52,33 @@
         </div>
 
 
-        <form  data-bind="submit: addIngredient">
-            <input data-bind='value: itemToAdd, valueUpdate: "afterkeydown"' placeholder="... tomatoes" />
-            <button type="submit" data-bind="enable: itemToAdd().length > 0 && ingredientList().length < 5 " >Add</button>
-            <p data-bind='fadeVisible:  ingredientList().length > 4' >Sorry, 5 ingredients maximum</p>
 
-        </form>
-
-
-
-        <ul data-bind='foreach: ingredientList'>
-            <li class="ingredient" data-bind='text: $data, click: $root.removeIngredient'></li>
-        </ul>
-
-
-    <button class="btn btn-large btn-block btn-primary" data-bind="click: search">Search</button>
-
-
-    <ul data-bind="foreach: $root.firstName.matches">
-        <li data-bind="text: $data"></li>
+        <ul data-bind="foreach: $root.firstName.matches">
+            <li data-bind="text: $data"></li>
 
 <!--    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre> -->
 
-    </ul>
+        </ul>
 
-
-    <!--   This loop works and gathers the recipe count 
-    <ul data-bind="foreach: $root.firstName">
-        <li data-bind="text: totalMatchCount"></li>
-    </ul>
-     -->
      
-    <h3 data-bind="text: $root.fullRecipeName"></h3>
-    <ul data-bind="foreach: $root.fullRecipeIngredients">
-        <li data-bind="text: $data"></li>
-    </ul>
-    <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank">Go To Recipe Website</a>
-    <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
+        <!-- Individual recipe -->
+        <h3 data-bind="text: $root.fullRecipeName"></h3>
+        <ul data-bind="foreach: $root.fullRecipeIngredients">
+            <li data-bind="text: $data"></li>
+        </ul>
+        <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank">Go To Recipe Website</a>
+        <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
 
-    <button data-bind="click: $root.clearStorage" >clear</button>
+        <button data-bind="click: $root.clearStorage" >clear</button>
 
-    <button data-bind="click: $root.listFavourites" >list</button>
-
-
-
+        <button data-bind="click: $root.listFavourites" >list</button>
 
 
-        <ul data-bind="foreach: $root.firstName">
-            <li data-bind="click: $root.goToRecipe">
+
+
+
+        <ul class="list" data-bind="foreach: $root.firstName">
+            <li class="list-item" data-bind="click: $root.goToRecipe">
                 <img data-bind="attr: { src: smallImageUrls, title: recipeName }" />
                 <p data-bind="text: recipeName"></p>
             </li>
@@ -126,10 +105,8 @@
 
     <!-- <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
 
-
-
-
-    <script src="js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script src="js/jquery-1.8.3.min.js"></script>
         <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
         <script src="js/jquery.ui.touch-punch.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -140,12 +117,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/knockout-2.3.0.js"></script>
         <script src="js/main.js"></script>
-
-
-
-
-
-
 
     </body>
 </html>
