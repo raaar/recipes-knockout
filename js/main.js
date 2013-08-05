@@ -8,7 +8,7 @@ function IngredientsViewModel() {
     this.showSearch = ko.observable(true);
 
     this.showSearchResults = ko.observable(true);
-    self.showSingle = ko.observable(true);
+    self.showSingle = ko.observable(false);
 
 
 
@@ -66,7 +66,7 @@ function IngredientsViewModel() {
 	self.fullRecipeUrl = ko.observableArray("");
 	this.goToRecipe = function(x) {
 		self.showSearchResults(false);
-		self.showSingle = ko.observable(true);
+		self.showSingle(true);
 
 
 		var selectedRecipeId = x.id;

@@ -50,9 +50,6 @@
 
         <ul data-bind="foreach: $root.firstName.matches">
             <li data-bind="text: $data"></li>
-
-<!--    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre> -->
-
         </ul>
 
         <section data-bind="visible: $root.showSearchResults">
@@ -63,7 +60,6 @@
                 </li>
             </ul>
         </section>
-    </section>
 
 
 
@@ -81,6 +77,13 @@
 
             <button data-bind="click: $root.listFavourites" >list</button>
         </section>
+
+
+    </section>
+
+
+
+
 
 
 
