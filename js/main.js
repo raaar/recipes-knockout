@@ -7,6 +7,27 @@ function IngredientsViewModel() {
     this.showFavourites = ko.observable(false);
     this.showSearch = ko.observable(true);
 
+
+	var term = $('.ingredientTags').val();
+	console.log(term);
+
+	this.searchTags = function() {
+		var list = $('.ingredientTags').val();
+		var str = "";
+
+		if (list.length == 0) {
+			return null;
+		} else if (list.length == 1) {
+			str = list.toString();
+		} else {
+			for(i = 0 ; i < list.length ; i++) {
+				str += list[i] + "+";	
+			}
+		}
+		this.getData(list); 
+
+	}
+
 	this.addIngredient = function() {
 		if (this.itemToAdd() != "") {
 			// fix multiple items separated by comma
@@ -106,7 +127,7 @@ function IngredientsViewModel() {
 	}
 
 
-	this.search = function() {
+	this.openSearch = function() {
 		this.showFavourites(false);
 		this.showSearch(true);		
 	}

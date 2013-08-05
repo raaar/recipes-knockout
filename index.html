@@ -25,7 +25,7 @@
 
 
     <nav class="navigation">
-        <div data-bind="click: $root.search" class="navigation-button current"><span class="fui-search"></span></div>
+        <div data-bind="click: $root.openSearch" class="navigation-button current"><span class="fui-search"></span></div>
         <div class="navigation-button" data-bind="click: $root.listFavourites"><span class="fui-heart"></span></div>
     </nav>
 
@@ -44,7 +44,11 @@
            
         <div class="search-wrap">
             <p>Search ingredients</p>
-            <input name="tagsinput" id="tagsinput" class="ingredientTags" value="Clean,Fresh,Modern,Unique" />
+            <form databind="submit: searchTags">
+                <input name="tagsinput" id="tagsinput" class="ingredientTags" valueUpdate="Clean,Fresh,Modern,Unique" />
+                <button class="btn btn-large btn-block btn-primary" data-bind="click: searchTags" >Search</button>
+            </form>
+
         </div>
 
 
