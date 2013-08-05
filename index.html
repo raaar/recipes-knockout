@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+    <!--  <link rel="stylesheet" href="css/normalize.min.css"> -->
+
+
+
+        <!-- Loading Bootstrap -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Loading Flat UI -->
+        <link href="css/flat-ui.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+
+    <nav class="navigation">
+        <div data-bind="click: $root.search" class="navigation-button current"><span class="fui-search"></span></div>
+        <div class="navigation-button" data-bind="click: $root.listFavourites"><span class="fui-heart"></span></div>
+    </nav>
+
+
+
+
+
+<div class="content">
+
+    
+
+
+
+
+    <section data-bind="visible: $root.showSearch" class="search">
+           
+        <div class="search-wrap">
+            <p>Search ingredients</p>
+            <input name="tagsinput" id="tagsinput" class="ingredientTags" value="Clean,Fresh,Modern,Unique" />
+        </div>
+
+
+        <form  data-bind="submit: addIngredient">
+            <input data-bind='value: itemToAdd, valueUpdate: "afterkeydown"' placeholder="... tomatoes" />
+            <button type="submit" data-bind="enable: itemToAdd().length > 0 && ingredientList().length < 5 " >Add</button>
+            <p data-bind='fadeVisible:  ingredientList().length > 4' >Sorry, 5 ingredients maximum</p>
+
+        </form>
+
+
+
+        <ul data-bind='foreach: ingredientList'>
+            <li class="ingredient" data-bind='text: $data, click: $root.removeIngredient'></li>
+        </ul>
+
+
+    <button class="btn btn-large btn-block btn-primary" data-bind="click: search">Search</button>
+
+
+    <ul data-bind="foreach: $root.firstName.matches">
+        <li data-bind="text: $data"></li>
+
+<!--    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre> -->
+
+    </ul>
+
+
+    <!--   This loop works and gathers the recipe count 
+    <ul data-bind="foreach: $root.firstName">
+        <li data-bind="text: totalMatchCount"></li>
+    </ul>
+     -->
+     
+    <h3 data-bind="text: $root.fullRecipeName"></h3>
+    <ul data-bind="foreach: $root.fullRecipeIngredients">
+        <li data-bind="text: $data"></li>
+    </ul>
+    <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank">Go To Recipe Website</a>
+    <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
+
+    <button data-bind="click: $root.clearStorage" >clear</button>
+
+    <button data-bind="click: $root.listFavourites" >list</button>
+
+
+
+
+
+        <ul data-bind="foreach: $root.firstName">
+            <li data-bind="click: $root.goToRecipe">
+                <img data-bind="attr: { src: smallImageUrls, title: recipeName }" />
+                <p data-bind="text: recipeName"></p>
+            </li>
+        </ul>
+    </section>
+
+
+
+    <section data-bind="visible: $root.showFavourites" class="favourites">
+        <p>You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
+
+
+        <ul class="list" data-bind="foreach: $root.favourites()">
+            <li class="list-item"> 
+                 <img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" />
+                <p data-bind="text:  name"></p>
+            </li>
+        </ul>
+    </section>
+
+
+
+</div><!-- content -->
+
+    <!-- <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
+
+
+
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+        <script src="js/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <script src="js/jquery.tagsinput.js"></script>
+
+
+        <script src="js/plugins.js"></script>
+        <script src="js/knockout-2.3.0.js"></script>
+        <script src="js/main.js"></script>
+
+
+
+
+
+
+
+    </body>
+</html>
