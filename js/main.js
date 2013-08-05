@@ -7,6 +7,12 @@ function IngredientsViewModel() {
     this.showFavourites = ko.observable(false);
     this.showSearch = ko.observable(true);
 
+    this.showSearchResults = ko.observable(true);
+    self.showSingle = ko.observable(true);
+
+
+
+
 	this.searchTags = function() {
 		var terms = $('.ingredientTags').val();		
 		//var yummlyJson = 'http://api.yummly.com/v1/api/recipes?_app_id=3d201ae5&_app_key=9da85e4d69408c34a30d4afa7ce7c549&callback=&' + terms + '&callback=?';
@@ -59,6 +65,10 @@ function IngredientsViewModel() {
 	self.fullRecipeIngredients = ko.observable("");
 	self.fullRecipeUrl = ko.observableArray("");
 	this.goToRecipe = function(x) {
+		self.showSearchResults(false);
+		self.showSingle = ko.observable(true);
+
+
 		var selectedRecipeId = x.id;
 		//self.rcName(x.recipeName);
 		//self.rcIngredients(x.ingredients);

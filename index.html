@@ -35,11 +35,6 @@
 
 <div class="content">
 
-    
-
-
-
-
     <section data-bind="visible: $root.showSearch" class="search">
            
         <div class="search-wrap">
@@ -60,30 +55,36 @@
 
         </ul>
 
-     
-        <!-- Individual recipe -->
-        <h3 data-bind="text: $root.fullRecipeName"></h3>
-        <ul data-bind="foreach: $root.fullRecipeIngredients">
-            <li data-bind="text: $data"></li>
-        </ul>
-        <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank">Go To Recipe Website</a>
-        <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
-
-        <button data-bind="click: $root.clearStorage" >clear</button>
-
-        <button data-bind="click: $root.listFavourites" >list</button>
-
-
-
-
-
-        <ul class="list" data-bind="foreach: $root.firstName">
-            <li class="list-item" data-bind="click: $root.goToRecipe">
-                <img data-bind="attr: { src: smallImageUrls, title: recipeName }" />
-                <p data-bind="text: recipeName"></p>
-            </li>
-        </ul>
+        <section data-bind="visible: $root.showSearchResults">
+            <ul class="list" data-bind="foreach: $root.firstName">
+                <li class="list-item" data-bind="click: $root.goToRecipe ">
+                    <img data-bind="attr: { src: smallImageUrls, title: recipeName }" />
+                    <p data-bind="text: recipeName"></p>
+                </li>
+            </ul>
+        </section>
     </section>
+
+
+
+        <!-- Individual recipe -->
+        <section class="single-recipe" data-bind="visible: $root.showSingle">Some stuff
+            <span class="close-recipe fui-cross" data-bind="click: function(){$root.showSingle(false) ; $root.showSearchResults(true)}"></span>
+
+            <ul data-bind="foreach: $root.fullRecipeIngredients">
+                <li data-bind="text: $data"></li>
+            </ul>
+            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank">Go To Recipe Website</a>
+            <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
+
+            <button data-bind="click: $root.clearStorage" >clear</button>
+
+            <button data-bind="click: $root.listFavourites" >list</button>
+        </section>
+
+
+
+
 
 
 

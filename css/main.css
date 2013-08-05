@@ -14,6 +14,7 @@ body {
     font-size: 1em;
     line-height: 1.4;
     padding: 0;
+    background: lightgray;
 }
 
 ::-moz-selection {
@@ -91,7 +92,7 @@ textarea {
 }
 
 .list-item {
-    background: lightgray;
+    background: white;
     list-style: none outside none;
     padding: 10px;
     clear: both;
@@ -108,7 +109,22 @@ textarea {
     font-size: 10pt;
 }
 
+.single-recipe {
+    position: relative;
+}
 
+.close-recipe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    text-indent: 12px;
+    line-height: 40px;
+    cursor: pointer;
+}
 
 
 
