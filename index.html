@@ -73,12 +73,29 @@
             <ul data-bind="foreach: $root.fullRecipeIngredients">
                 <li data-bind="text: $data"></li>
             </ul>
-            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank">Go To Recipe Website</a>
+
+            <div class="switch-wrapper">
+                <label class="switch-label">Save</label>
+              <td class="pbm">
+                <div class="switch switch-square"
+                  data-on-label="<i class='fui-check'></i>"
+                  data-off-label="<i class='fui-cross'></i>">
+                  <input type="checkbox" />
+                </div>
+              </td>
+            </div>
+
+
             <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
 
             <button data-bind="click: $root.clearStorage" >clear</button>
 
             <button data-bind="click: $root.listFavourites" >list</button>
+
+
+            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to recipe website</a>
+
+
         </section>
 
 
@@ -118,6 +135,8 @@
         <script src="js/bootstrap.min.js"></script>
 
         <script src="js/jquery.tagsinput.js"></script>
+        <script src="js/bootstrap-switch.js"></script>
+
 
 
         <script src="js/plugins.js"></script>

@@ -70,7 +70,6 @@ textarea {
 }
 
 .navigation {
-    position: fixed;
     width: 100%;
     z-index: 1000;
 }
@@ -117,14 +116,15 @@ textarea {
 }
 
 .single-recipe {
+    position: relative;
+    overflow: hidden;
     background: none repeat scroll 0 0 white;
     height: 100%;
     left: 0;
-    position: fixed;
-    overflow: hidden;
     top: 0;
     width: 100%;
     z-index: 10000;
+    border-radius: 6px;
 }
 
 .close-recipe {
@@ -138,9 +138,28 @@ textarea {
     text-indent: 12px;
     line-height: 40px;
     cursor: pointer;
+    margin: 10px;
+    background: lightgray;
 }
 
+.switch-wrapper {
+    bottom: 0;
+    margin-bottom: 3px;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+}
 
+.switch-wrapper .switch-label {
+    float: left;
+    margin-right: 10px;
+    line-height: 28px;
+}
+
+.go-to-website {
+    margin: 10px;
+    width: 50%;
+}
 
 
 /* ==========================================================================

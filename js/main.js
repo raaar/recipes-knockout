@@ -65,9 +65,8 @@ function IngredientsViewModel() {
 	self.fullRecipeIngredients = ko.observable("");
 	self.fullRecipeUrl = ko.observableArray("");
 	this.goToRecipe = function(x) {
-		//self.showSearchResults(false);
+		self.showSearchResults(false);
 		self.showSingle(true);
-
 
 		var selectedRecipeId = x.id;
 		//self.rcName(x.recipeName);
@@ -134,7 +133,9 @@ function IngredientsViewModel() {
 	$('.navigation-button').click(function(){
 		$('.navigation-button').removeClass('current');
 		$(this).addClass('current');
-	})
+	});
+	
+    $("[data-toggle='switch']").wrap('<div class="switch" />').parent().bootstrapSwitch();
 
 
 };
