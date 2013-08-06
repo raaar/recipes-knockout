@@ -10,6 +10,8 @@ function IngredientsViewModel() {
     this.showSearchResults = ko.observable(true);
     self.showSingle = ko.observable(false);
 
+    self.showSearchBar = ko.observable(true);
+
 
 
 
@@ -67,6 +69,9 @@ function IngredientsViewModel() {
 	this.goToRecipe = function(x) {
 		self.showSearchResults(false);
 		self.showSingle(true);
+
+		self.showSearchBar(false);
+		console.log("hello")
 
 		var selectedRecipeId = x.id;
 		//self.rcName(x.recipeName);

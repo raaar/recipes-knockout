@@ -37,7 +37,7 @@
 
     <section data-bind="visible: $root.showSearch" class="search">
            
-        <div class="search-wrap">
+        <div data-bind="visible: $root.showSearchBar" class="search-wrap">
             <p>Search ingredients</p>
             <form databind="submit: searchTags">
                 <input name="tagsinput" id="tagsinput" class="ingredientTags" valueUpdate="Clean,Fresh,Modern,Unique" />
@@ -57,7 +57,7 @@
 
         <section data-bind="visible: $root.showSearchResults">
             <ul class="list" data-bind="foreach: $root.firstName">
-                <li class="list-item" data-bind="click: $root.goToRecipe ">
+                <li class="list-item" data-bind="click: $root.goToRecipe  ">
                     <img data-bind="attr: { src: smallImageUrls, title: recipeName }" />
                     <p data-bind="text: recipeName"></p>
                 </li>
@@ -68,21 +68,14 @@
 
         <!-- Individual recipe -->
         <section class="single-recipe" data-bind="visible: $root.showSingle">Some stuff
-            <span class="close-recipe fui-cross" data-bind="click: function(){$root.showSingle(false) ; $root.showSearchResults(true)}"></span>
+            <span class="close-recipe fui-cross" data-bind="click: function(){$root.showSingle(false) ; $root.showSearchResults(true); $root.showSearchBar(true)}"></span>
 
             <ul data-bind="foreach: $root.fullRecipeIngredients">
                 <li data-bind="text: $data"></li>
             </ul>
 
-            <div class="switch-wrapper">
-                <label class="switch-label">Save</label>
-              <td class="pbm">
-                <div class="switch switch-square"
-                  data-on-label="<i class='fui-check'></i>"
-                  data-off-label="<i class='fui-cross'></i>">
-                  <input type="checkbox" />
-                </div>
-              </td>
+            <div data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }" class="save-to-favourites">
+                <span class="fui-heart"></span>
             </div>
 
 
@@ -93,7 +86,7 @@
             <button data-bind="click: $root.listFavourites" >list</button>
 
 
-            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to recipe website</a>
+            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website <span class=" search-icon fui-eye"></span></a>
 
 
         </section>

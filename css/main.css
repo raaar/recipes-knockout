@@ -142,23 +142,17 @@ textarea {
     background: lightgray;
 }
 
-.switch-wrapper {
+.save-to-favourites {
     bottom: 0;
     margin-bottom: 3px;
     margin-right: 10px;
-    position: absolute;
     right: 0;
-}
-
-.switch-wrapper .switch-label {
-    float: left;
-    margin-right: 10px;
-    line-height: 28px;
-}
-
-.go-to-website {
     margin: 10px;
-    width: 50%;
+    font-size: 30px;
+}
+
+.search-icon {
+    line-height: 10px;
 }
 
 
