@@ -120,7 +120,8 @@ textarea {
     background: none repeat scroll 0 0 white;
     height: 100%;
     left: 0;
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     top: 0;
     width: 100%;
     z-index: 10000;

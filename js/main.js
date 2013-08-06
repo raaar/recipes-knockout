@@ -65,7 +65,7 @@ function IngredientsViewModel() {
 	self.fullRecipeIngredients = ko.observable("");
 	self.fullRecipeUrl = ko.observableArray("");
 	this.goToRecipe = function(x) {
-		self.showSearchResults(false);
+		//self.showSearchResults(false);
 		self.showSingle(true);
 
 
