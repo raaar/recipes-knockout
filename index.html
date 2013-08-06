@@ -50,6 +50,9 @@
 
         <ul data-bind="foreach: $root.firstName.matches">
             <li data-bind="text: $data"></li>
+
+<!--    <pre data-bind="text: ko.toJSON($root, null, 2)"></pre> -->
+
         </ul>
 
         <section data-bind="visible: $root.showSearchResults">
@@ -109,7 +112,6 @@
 
     <!-- <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
 
-        <script type="text/javascript" src="phonegap.js"></script>
         <script src="js/jquery-1.8.3.min.js"></script>
         <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
         <script src="js/jquery.ui.touch-punch.min.js"></script>
@@ -121,6 +123,8 @@
         <script src="js/plugins.js"></script>
         <script src="js/knockout-2.3.0.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+
 
     </body>
 </html>

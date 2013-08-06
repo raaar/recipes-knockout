@@ -128,17 +128,6 @@ function IngredientsViewModel() {
     	}
 	};
 
-
-};
-
-var vm = new IngredientsViewModel();
-ko.applyBindings(vm);
-
-
-
-
-$(document).ready(function() {
-	
 	$(".ingredientTags").tagsInput();
 
 
@@ -146,4 +135,9 @@ $(document).ready(function() {
 		$('.navigation-button').removeClass('current');
 		$(this).addClass('current');
 	})
-});
+
+
+};
+
+var vm = new IngredientsViewModel();
+ko.applyBindings(vm);

@@ -93,6 +93,7 @@ textarea {
 
 .list-item {
     background: white;
+    border-radius: 6px;
     list-style: none outside none;
     padding: 10px;
     clear: both;
