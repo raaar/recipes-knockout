@@ -15,6 +15,7 @@ body {
     line-height: 1.4;
     padding: 0;
     background: lightgray;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 ::-moz-selection {
@@ -68,6 +69,10 @@ textarea {
     cursor: pointer;;
 }
 
+.navigation {
+    position: fixed;
+    width: 100%
+}
 
 .navigation-button {
     width: 50%;
@@ -75,7 +80,7 @@ textarea {
     color: white;
     float: left;
     text-align: center;
-    padding: 30px 0;
+    padding: 20px 0;
     cursor: pointer;
 }
 
@@ -84,7 +89,7 @@ textarea {
 }
 
 .content {
-    padding: 0 5%;
+    padding: 90px 5% 0;
 }
 
 .list {
