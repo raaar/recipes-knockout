@@ -66,14 +66,18 @@ textarea {
 
 
 header {
-background: rgb(109,31,39); /* Old browsers */
-background: -moz-linear-gradient(left,  rgba(109,31,39,1) 0%, rgba(130,37,54,1) 50%, rgba(109,31,39,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(109,31,39,1)), color-stop(50%,rgba(130,37,54,1)), color-stop(100%,rgba(109,31,39,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); /* IE10+ */
-background: linear-gradient(to right,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', endColorstr='#6d1f27',GradientType=1 ); /* IE6-9 */
+    background: #822536;
+
+    /*
+background: rgb(109,31,39); 
+background: -moz-linear-gradient(left,  rgba(109,31,39,1) 0%, rgba(130,37,54,1) 50%, rgba(109,31,39,1) 100%); 
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(109,31,39,1)), color-stop(50%,rgba(130,37,54,1)), color-stop(100%,rgba(109,31,39,1))); 
+background: -webkit-linear-gradient(left,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); 
+background: -o-linear-gradient(left,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); 
+background: -ms-linear-gradient(left,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); 
+background: linear-gradient(to right,  rgba(109,31,39,1) 0%,rgba(130,37,54,1) 50%,rgba(109,31,39,1) 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', endColorstr='#6d1f27',GradientType=1 ); 
+    */
 
 }
 
@@ -103,6 +107,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', end
     text-align: center;
     padding: 20px 0;
     cursor: pointer;
+    background: #822536;
 }
 
 .navigation-left {
