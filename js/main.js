@@ -16,7 +16,7 @@ function IngredientsViewModel() {
 
 
 	this.searchTags = function() {
-		var terms = $('.ingredientTags').val();		
+		var terms = $('.ingredientTags').val();	
 		//var yummlyJson = 'http://api.yummly.com/v1/api/recipes?_app_id=3d201ae5&_app_key=9da85e4d69408c34a30d4afa7ce7c549&callback=&' + terms + '&callback=?';
 		var yummlyJson = 'http://api.yummly.com/v1/api/recipes?_app_id=3d201ae5&_app_key=9da85e4d69408c34a30d4afa7ce7c549&q='+ terms +'&callback=?';
 		

@@ -122,9 +122,10 @@ textarea {
     height: 100%;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 94%;
     z-index: 10000;
     border-radius: 6px;
+    padding: 3%;
 }
 
 .close-recipe {
@@ -155,6 +156,14 @@ textarea {
     line-height: 10px;
 }
 
+
+footer {
+    text-align: center;
+    background: transparent;
+    color: black;
+    font-size: 8px;
+    margin: 20px auto;
+}
 
 /* ==========================================================================
    Media Queries

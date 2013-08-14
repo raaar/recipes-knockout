@@ -58,7 +58,11 @@
         <section data-bind="visible: $root.showSearchResults">
             <ul class="list" data-bind="foreach: $root.firstName">
                 <li class="list-item" data-bind="click: $root.goToRecipe  ">
-                    <img data-bind="attr: { src: smallImageUrls, title: recipeName }" />
+                    <img data-bind="attr: { src: smallImageUrls[0], title: recipeName }" />
+                    
+                    <!-- ko if (1 == 2) -->
+                    <span data-bind="value: function(){ text:' yes' }" ></span>
+
                     <p data-bind="text: recipeName"></p>
                 </li>
             </ul>
@@ -67,9 +71,9 @@
 
 
         <!-- Individual recipe -->
-        <section class="single-recipe" data-bind="visible: $root.showSingle">Some stuff
+        <section class="single-recipe" data-bind="visible: $root.showSingle">
             <span class="close-recipe fui-cross" data-bind="click: function(){$root.showSingle(false) ; $root.showSearchResults(true); $root.showSearchBar(true)}"></span>
-
+            <h2 data-bind="text: $root.fullRecipeName"></h2>
             <ul data-bind="foreach: $root.fullRecipeIngredients">
                 <li data-bind="text: $data"></li>
             </ul>
@@ -77,14 +81,6 @@
             <div data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }" class="save-to-favourites">
                 <span class="fui-heart"></span>
             </div>
-
-
-            <button data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }">Save</button>
-
-            <button data-bind="click: $root.clearStorage" >clear</button>
-
-            <button data-bind="click: $root.listFavourites" >list</button>
-
 
             <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website <span class=" search-icon fui-eye"></span></a>
 
@@ -103,22 +99,27 @@
 
     <section data-bind="visible: $root.showFavourites" class="favourites">
         <p>You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
-        <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre>
+        <!--<pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
 
         <ul class="list" data-bind="foreach: $root.favourites()">
             <li class="list-item"> 
-                <!--<img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" /> -->
+                <img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" />
                 <p data-bind="text:  name"></p>
             </li>
         </ul>
-
-        <button data-bind="click: $root.clearStorage" >clear</button>
 
     </section>
 
 
 
 </div><!-- content -->
+
+<footer>
+    <button data-bind="click: $root.clearStorage" >clear</button>
+
+    App by Raflondon
+
+</footer>
 
     <!-- <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
 
