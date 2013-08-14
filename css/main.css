@@ -65,13 +65,13 @@ textarea {
 
 
 
-header {
+.logo {
 
-    /*
+    
 
     background: #822536;
 
-    
+/*
 background: rgb(109,31,39); 
 background: -moz-linear-gradient(left,  rgba(109,31,39,1) 0%, rgba(130,37,54,1) 50%, rgba(109,31,39,1) 100%); 
 background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(109,31,39,1)), color-stop(50%,rgba(130,37,54,1)), color-stop(100%,rgba(109,31,39,1))); 
