@@ -110,6 +110,9 @@
                 <p data-bind="text:  name"></p>
             </li>
         </ul>
+
+        <button data-bind="click: $root.clearStorage" >clear</button>
+
         <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre>
     </section>
 

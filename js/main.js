@@ -89,7 +89,6 @@ function IngredientsViewModel() {
 
 	console.log("you have " + (localStorage.length) +  " recipes saved");
 
-	//var rafFavourites = {};
 	this.saveRecipe = function(theObject , y, z) {
 		localStorage.setItem( self.favourites(), JSON.stringify(theObject));
 	}
