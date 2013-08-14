@@ -98,6 +98,11 @@ function IngredientsViewModel() {
 
 	this.saveRecipe = function(theObject , y, z) {
 		localStorage.setItem( self.favourites(), JSON.stringify(theObject));
+
+		console.log("mutated");
+		//self.favourites.valueHasMutated();
+		//self.favouriteItem.valueHasMutated();
+		//self.favouriteList.valueHasMutated();
 	}
 
 	this.clearStorage = function() {
@@ -121,18 +126,23 @@ function IngredientsViewModel() {
 		//this.favourites.push(localStorage[i]);
 	}
 
-
+	self.favouriteWholeRecipe = ko.observable('');
 	self.favouriteName = ko.observable('');
 	self.favouriteUrl = ko.observable('');
 	self.favouriteIngredients = ko.observable('');
 	this.openFavourite = function(data, a, b) {
 		console.log(data);
+		self.favouriteWholeRecipe(data)
 		self.favouriteName(data.name);
 		self.favouriteIngredients(data.ingredientLines);
 		self.favouriteUrl(data.source.sourceRecipeUrl);
 
 		self.favouriteList(false);
 		self.singleFavourite(true);
+	}
+
+	this.deleteFavourite = function() {
+		console.log(self.favourites());
 	}
 
 

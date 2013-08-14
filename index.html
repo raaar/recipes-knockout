@@ -27,8 +27,8 @@
     <img class="logo" src="logo.png" >
 
     <nav class="navigation">
-        <div data-bind="click: $root.openSearch" class="navigation-button current"><span class="fui-search"></span></div>
-        <div class="navigation-button" data-bind="click: $root.listFavourites"><span class="fui-heart"></span></div>
+        <div data-bind="click: $root.openSearch" class="navigation-button current navigation-left"><span class="fui-search"></span></div>
+        <div class="navigation-button navigation-right" data-bind="click: $root.listFavourites"><span class="fui-heart"></span></div>
     </nav>
 </header>
 
@@ -43,7 +43,7 @@
             <p>Search recipe or ingredients</p>
             <form databind="submit: searchTags">
                 <input name="tagsinput" id="tagsinput" class="ingredientTags" valueUpdate="Clean,Fresh,Modern,Unique" />
-                <button class="btn btn-large btn-block btn-primary" data-bind="click: searchTags" >Search</button>
+                <button class="btn btn-large btn-block" data-bind="click: searchTags" >Search</button>
             </form>
 
         </div>
@@ -91,7 +91,7 @@
                 <span data-bind="visible: $root.singleCheckIcon" class="fui-check"></span>
             </div>
 
-            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website</span></a>
+            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block go-to-website">Go to website</span></a>
 
 
         </section>
@@ -122,6 +122,9 @@
                     <p data-bind="text:  name"></p>
                 </li>
             </ul>
+
+            <div class="btn btn-large btn-block delete-btn"  data-bind="click: $root.clearStorage" >Delete all favourites</div>
+
         </div><!-- favouriteList -->
 
         <div class="single-recipe" data-bind="visible: $root.singleFavourite" >
@@ -132,8 +135,12 @@
             <ul data-bind="foreach: $root.favouriteIngredients">
                 <li data-bind="text: $data"></li>
             </ul>
+            
+            <div class="save-to-favourites">
+                <span data-bind="click: $root.deleteFavourite" class="fui-cross"></span>
+            </div>
 
-            <a data-bind="attr: {href: $root.favouriteUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website</span></a>
+            <a data-bind="attr: {href: $root.favouriteUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block go-to-website">Go to website</span></a>
         </div>
 
     </section>
@@ -145,7 +152,6 @@
 </div><!-- content -->
 
 <footer>
-    <button data-bind="click: $root.clearStorage" >clear</button>
 
     A Raflondon app. 2013
 
