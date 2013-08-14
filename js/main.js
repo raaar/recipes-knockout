@@ -16,6 +16,10 @@ function IngredientsViewModel() {
     self.singleCheckIcon = ko.observable(false);
 
 
+    self.favouriteList = ko.observable(true);
+    self.singleFavourite = ko.observable(false);
+
+
 
 
 	this.searchTags = function() {
@@ -115,6 +119,20 @@ function IngredientsViewModel() {
 		self.favouriteItem = JSON.parse(localStorage[i]);
 		this.favourites.push(this.favouriteItem);
 		//this.favourites.push(localStorage[i]);
+	}
+
+
+	self.favouriteName = ko.observable('');
+	self.favouriteUrl = ko.observable('');
+	self.favouriteIngredients = ko.observable('');
+	this.openFavourite = function(data, a, b) {
+		console.log(data);
+		self.favouriteName(data.name);
+		self.favouriteIngredients(data.ingredientLines);
+		self.favouriteUrl(data.source.sourceRecipeUrl);
+
+		self.favouriteList(false);
+		self.singleFavourite(true);
 	}
 
 

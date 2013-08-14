@@ -64,6 +64,7 @@ textarea {
 header {
     background: #282828;
 }
+
 .search-wrap {
     margin-bottom: 50px;
 }
@@ -188,7 +189,7 @@ header {
 }
 
 .saved-recipes-counter {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 

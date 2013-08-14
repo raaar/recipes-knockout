@@ -24,7 +24,7 @@
     <body>
 
 <header>
-    <img src="logo.png" >
+    <img class="logo" src="logo.png" >
 
     <nav class="navigation">
         <div data-bind="click: $root.openSearch" class="navigation-button current"><span class="fui-search"></span></div>
@@ -107,21 +107,38 @@
 
 
     <section data-bind="visible: $root.showFavourites" class="favourites">
-        <p class="saved-recipes-counter">You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
-        <!--<pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
+        
+        <div class="favourite-list" data-bind="visible: $root.favouriteList">
+            <p class="saved-recipes-counter">You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
+            <!--<pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
 
-        <ul class="list" data-bind="foreach: $root.favourites()">
-            <li class="list-item"> 
-                <span class="fui-arrow-right list-arrow"></span>
+            <ul class="list" data-bind="foreach: $root.favourites()">
+                <li class="list-item" data-bind="click:   function(data, event) { $root.openFavourite( $data , data, event) } "> 
+                    <span class="fui-arrow-right list-arrow"></span>
                 <!-- I need to find a way to save images from json -->
                 <!--<img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" />-->
-                <img class="alternative-image" src="icon.png" >
+                    <img class="alternative-image" src="icon.png" >
 
-                <p data-bind="text:  name"></p>
-            </li>
-        </ul>
+                    <p data-bind="text:  name"></p>
+                </li>
+            </ul>
+        </div><!-- favouriteList -->
+
+        <div class="single-recipe" data-bind="visible: $root.singleFavourite" >
+            <span class="close-recipe fui-cross" data-bind="click: function(){$root.singleFavourite(false) ; $root.favouriteList(true);}"></span>
+
+            <h2 data-bind="text: $root.favouriteName"></h2>
+            
+            <ul data-bind="foreach: $root.favouriteIngredients">
+                <li data-bind="text: $data"></li>
+            </ul>
+
+            <a data-bind="attr: {href: $root.favouriteUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website</span></a>
+        </div>
 
     </section>
+
+
 
 
 
