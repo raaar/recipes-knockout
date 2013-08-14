@@ -103,7 +103,7 @@
 
     <section data-bind="visible: $root.showFavourites" class="favourites">
         <p>You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
-        <pre data-bind="text: ko.toJSON($root.favourites()[2].name, null, 2)"></pre>
+        <pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre>
 
         <ul class="list" data-bind="foreach: $root.favourites()">
             <li class="list-item"> 

@@ -103,7 +103,7 @@ function IngredientsViewModel() {
 		this.showFavourites(true);
 		this.showSearch(false);
 
-		console.log('localStorage items: ' + localStorage.length);
+		console.log('localStorage items, favourites items: ' + self.favourites().length);
 		console.log(this.favourites());
 	}
 
