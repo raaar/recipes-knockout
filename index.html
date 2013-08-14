@@ -103,7 +103,8 @@
 
         <ul class="list" data-bind="foreach: $root.favourites()">
             <li class="list-item"> 
-                <img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" />
+                <!-- I need to find a way to save images from json -->
+                <!--<img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" />-->
                 <p data-bind="text:  name"></p>
             </li>
         </ul>
