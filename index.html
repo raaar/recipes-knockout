@@ -23,12 +23,14 @@
     </head>
     <body>
 
+<header>
+    <img src="logo.png" >
 
     <nav class="navigation">
         <div data-bind="click: $root.openSearch" class="navigation-button current"><span class="fui-search"></span></div>
         <div class="navigation-button" data-bind="click: $root.listFavourites"><span class="fui-heart"></span></div>
     </nav>
-
+</header>
 
 
 
@@ -38,7 +40,7 @@
     <section data-bind="visible: $root.showSearch" class="search">
            
         <div data-bind="visible: $root.showSearchBar" class="search-wrap">
-            <p>Search ingredients</p>
+            <p>Search recipe or ingredients</p>
             <form databind="submit: searchTags">
                 <input name="tagsinput" id="tagsinput" class="ingredientTags" valueUpdate="Clean,Fresh,Modern,Unique" />
                 <button class="btn btn-large btn-block btn-primary" data-bind="click: searchTags" >Search</button>
@@ -58,7 +60,13 @@
         <section data-bind="visible: $root.showSearchResults">
             <ul class="list" data-bind="foreach: $root.firstName">
                 <li class="list-item" data-bind="click: $root.goToRecipe  ">
+                    <span class="fui-arrow-right list-arrow"></span>
+
                     <img data-bind="attr: { src: smallImageUrls[0], title: recipeName }" />
+
+                    <span data-bind="if: !smallImageUrls[0]" >
+                        <img class="alternative-image" src="icon.png" >
+                    </span>
                     
                     <!-- ko if (1 == 2) -->
                     <span data-bind="value: function(){ text:' yes' }" ></span>
@@ -79,10 +87,11 @@
             </ul>
 
             <div data-bind="click: function(data, event) { $root.saveRecipe( $root.fullRecipe(), data, event) }" class="save-to-favourites">
-                <span class="fui-heart"></span>
+                <span data-bind="click: function() {$root.singleHeartIcon(false); $root.singleCheckIcon(true); }, visible: $root.singleHeartIcon " class="fui-heart"></span>
+                <span data-bind="visible: $root.singleCheckIcon" class="fui-check"></span>
             </div>
 
-            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website <span class=" search-icon fui-eye"></span></a>
+            <a data-bind="attr: {href: $root.fullRecipeUrl}" target="_blank" href="#fakelink" class="btn btn-large btn-block btn-primary go-to-website">Go to website</span></a>
 
 
         </section>
@@ -98,13 +107,16 @@
 
 
     <section data-bind="visible: $root.showFavourites" class="favourites">
-        <p>You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
+        <p class="saved-recipes-counter">You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
         <!--<pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
 
         <ul class="list" data-bind="foreach: $root.favourites()">
             <li class="list-item"> 
+                <span class="fui-arrow-right list-arrow"></span>
                 <!-- I need to find a way to save images from json -->
                 <!--<img data-bind="attr: { src: images[0].hostedSmallUrl, title: name }" />-->
+                <img class="alternative-image" src="icon.png" >
+
                 <p data-bind="text:  name"></p>
             </li>
         </ul>
@@ -118,7 +130,7 @@
 <footer>
     <button data-bind="click: $root.clearStorage" >clear</button>
 
-    App by Raflondon
+    A Raflondon app. 2013
 
 </footer>
 

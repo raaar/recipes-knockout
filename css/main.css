@@ -14,7 +14,6 @@ body {
     font-size: 1em;
     line-height: 1.4;
     padding: 0;
-    background: lightgray;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -62,8 +61,12 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
+header {
+    background: #282828;
+}
+.search-wrap {
+    margin-bottom: 50px;
+}
 
 .ingredient {
     cursor: pointer;;
@@ -76,7 +79,7 @@ textarea {
 
 .navigation-button {
     width: 50%;
-    background: black;
+    background: #282828;
     color: white;
     float: left;
     text-align: center;
@@ -97,14 +100,13 @@ textarea {
 }
 
 .list-item {
-    background: white;
-    border-radius: 6px;
-    list-style: none outside none;
-    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     clear: both;
-    overflow: hidden;
-    margin-bottom: 20px;
     cursor: pointer;
+    list-style: none outside none;
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
 }
 .list-item img {
     float: left;
@@ -112,7 +114,15 @@ textarea {
 }
 
 .list-item p {
-    font-size: 10pt;
+    font-size: 11pt;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.list-arrow {
+    position: absolute;
+    right: 0;
+    top: 38%;
 }
 
 .single-recipe {
@@ -128,20 +138,7 @@ textarea {
     padding: 3%;
 }
 
-.close-recipe {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: white;
-    border-radius: 100px;
-    width: 40px;
-    height: 40px;
-    text-indent: 12px;
-    line-height: 40px;
-    cursor: pointer;
-    margin: 10px;
-    background: lightgray;
-}
+
 
 .save-to-favourites {
     bottom: 0;
@@ -155,6 +152,45 @@ textarea {
 .search-icon {
     line-height: 10px;
 }
+
+.alternative-image {
+    width: 90px;
+    height: auto;
+}
+
+.single-recipe h2 {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.single-recipe ul {
+    margin-bottom: 20px;
+}
+
+.single-recipe li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.close-recipe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    text-indent: 12px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.saved-recipes-counter {
+    margin-bottom: 30px;
+}
+
 
 
 footer {

@@ -12,6 +12,9 @@ function IngredientsViewModel() {
 
     self.showSearchBar = ko.observable(true);
 
+    self.singleHeartIcon = ko.observable(true);
+    self.singleCheckIcon = ko.observable(false);
+
 
 
 
