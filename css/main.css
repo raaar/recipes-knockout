@@ -304,11 +304,16 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
 }
 
 .saved-recipes-counter {
+
+    margin: 0 auto;
+    background: orange;
+}
+
+.saved-recipes-counter p {
     font-size: 12px;
     width: 92%;
     padding: 90px 4% 10px;
-    margin: 0 auto;
-    background: orange;
+    margin-bottom: 0;    
 }
 
 .delete-btn {
@@ -327,8 +332,6 @@ footer {
     font-size: 8px;
     margin-top: 20px;
     padding: 20px 0 20px;
-    background: #282828;
-    color: orange;
 }
 
 /* ==========================================================================

@@ -41,7 +41,10 @@
 
     <section data-bind="visible: $root.showSearch" class="search">
 
-            <p class="saved-recipes-counter">Search recipe or ingredients</p>
+            <div class="saved-recipes-counter">
+                <p>Search recipe or ingredients</p>
+            </div>
+
             <div class="arrow-decoration"></div>
            
         <div data-bind="visible: $root.showSearchBar" class="search-wrap">
@@ -114,7 +117,9 @@
     <section data-bind="visible: $root.showFavourites" class="favourites">
         
         <div class="favourite-list" data-bind="visible: $root.favouriteList">
-            <p class="saved-recipes-counter">You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
+            <div class="saved-recipes-counter">
+                <p>You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
+            </div>
             <!--<pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
             <div class="arrow-decoration"></div>
 
