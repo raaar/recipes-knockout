@@ -15,7 +15,7 @@ body {
     line-height: 1.4;
     padding: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    background: #f5d5a9;
+    background: white;
 }
 
 ::-moz-selection {
@@ -69,7 +69,7 @@ textarea {
 
     
 
-    background: #822536;
+    background: #282828;
 
 /*
 background: rgb(109,31,39); 
@@ -85,7 +85,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', end
 }
 
 .search-wrap {
-    margin-bottom: 50px;
+    margin: 20px auto 50px;
+    padding: 0 4%;
+    width: 92%;
 }
 
 .ingredient {
@@ -100,7 +102,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', end
 }
 
 .navigation span {
-    color: #f5d5a9;
+    color: orange;
+}
+
+.arrow-decoration {
+    display: block;
+    height: 15px;
+    margin-left: 12%;
+    width: 30px;
+    background: url(../arrow-decoration.png) no-repeat;
+    background-size: 30px;
+    position: relative;
+    z-index: 100000;
 }
 
 .navigation-button {
@@ -110,7 +123,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', end
     text-align: center;
     padding: 20px 0;
     cursor: pointer;
-    background: #822536;
+    background: #282828;
 }
 
 .navigation-left {
@@ -122,69 +135,81 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', end
 }
 
 .current {
-    background: #f5d5a9;
-    background: rgb(226,193,140); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(226,193,140,1) 0%, rgba(245,213,169,1) 52%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,193,140,1)), color-stop(52%,rgba(245,213,169,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2c18c', endColorstr='#f5d5a9',GradientType=0 ); /* IE6-9 */
+    background: orange;
+
+/*
+    background: rgb(226,193,140); 
+    background: -moz-linear-gradient(top,  rgba(226,193,140,1) 0%, rgba(245,213,169,1) 52%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,193,140,1)), color-stop(52%,rgba(245,213,169,1))); 
+    background: -webkit-linear-gradient(top,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%);
+    background: -o-linear-gradient(top,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); 
+    background: -ms-linear-gradient(top,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); 
+    background: linear-gradient(to bottom,  rgba(226,193,140,1) 0%,rgba(245,213,169,1) 52%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2c18c', endColorstr='#f9e8d1',GradientType=0 ); 
+    */
 }
 
 .current span{
-    color: #822536;
+    color: #282828;
 }
 
 p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
-    color: #822536;
+    color: #282828;
 }
 
 .btn {
-    background: #822536;
-    color: #f5d5a9;
+    background: #282828;
+    color: orange;
 }
 
 .btn:hover {
-    background: #822536;
-    color: #f5d5a9;
+    background: #282828;
+    color: #f9e8d1;
     opacity: 0.8;
 }
 
 .tagsinput {
-    background: transparent;
-    border: 2px solid rgba(130, 37, 54, 1);
+    border: 2px solid orange;
+    background: orange;
 }
 
 .tagsinput .tag {
-    background-color: #822536;
-    color: #f5d5a9;
+    background-color: #282828;
+    color: orange;
 }
 
 .tagsinput .tag:hover {
-    background-color: #822536;
-    color: #f5d5a9;
+    background-color: #282828;
+    color: orange;
 }
 
 .tagsinput-remove-link:before {
-    color: #f5d5a9;
+    color: white;
 }
 .tagsinput-add {
-    color: #f5d5a9;   
+    color: white;   
     background: rgba(0,0,0,0.2);    
 }
 .tagsinput-add:hover {
-    background-color: #822536;
-    color: #f5d5a9;   
+    background-color: #282828;
+    color: orange;   
 }
 
 .content {
-    padding: 90px 5% 0;
+    padding: 0 0 0;
 }
 
 .list {
     margin: 0;
+}
+
+.list li:nth-child(odd)  {
+    background: rgba(0, 0, 0, 0.05)
+}
+
+.favourites .list li:first-child {
+    margin-top: -15px;
+    padding-top: 30px;
 }
 
 .list-item {
@@ -193,24 +218,25 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
     cursor: pointer;
     list-style: none outside none;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 15px 4%;
+    width: 92%;
     position: relative;
 }
 
 .list-item img {
     float: left;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .list-item p {
     font-size: 11pt;
-    max-width: 90%;
+    max-width: 86%;
     margin: 0 auto;
 }
 
 .list-arrow {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 38%;
 }
 
@@ -220,10 +246,8 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
     height: 100%;
     left: 0;
     top: 0;
-    width: 94%;
+    width: 100%;
     z-index: 10000;
-    border-radius: 6px;
-    padding: 3%;
 }
 
 
@@ -235,6 +259,7 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
     right: 0;
     margin: 10px;
     font-size: 30px;
+    display: none;
 }
 
 .search-icon {
@@ -247,15 +272,15 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
 }
 
 .single-recipe h2 {
-    border-bottom: 1px solid rgba(130, 37, 54, 0.1);
-
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    width: 90%;
+    background: orange;
+    margin: 0;
+    padding: 60px 4% 10px;
 }
 
 .single-recipe ul {
     margin-bottom: 20px;
+    width: 86%;
+    margin: 7%;
 }
 
 .single-recipe li {
@@ -267,8 +292,8 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
     position: absolute;
     top: 0;
     right: 0;
-    background: #822536;
-    color: #f5d5a9;
+    background: #282828;
+    color: orange;
     border-radius: 100px;
     width: 40px;
     height: 40px;
@@ -279,20 +304,31 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
 }
 
 .saved-recipes-counter {
-    margin-bottom: 25px;
     font-size: 12px;
+    width: 92%;
+    padding: 90px 4% 10px;
+    margin: 0 auto;
+    background: orange;
 }
 
 .delete-btn {
     margin-top: 20px;
+    padding: 20px;
 }
 
+.go-to-website {
+    width: 92%;
+    margin: 0 auto;
+}
 
 footer {
     text-align: center;
     background: transparent;
     font-size: 8px;
-    margin: 20px auto;
+    margin-top: 20px;
+    padding: 20px 0 20px;
+    background: #282828;
+    color: orange;
 }
 
 /* ==========================================================================

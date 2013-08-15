@@ -40,9 +40,11 @@
 <div class="content">
 
     <section data-bind="visible: $root.showSearch" class="search">
+
+            <p class="saved-recipes-counter">Search recipe or ingredients</p>
+            <div class="arrow-decoration"></div>
            
         <div data-bind="visible: $root.showSearchBar" class="search-wrap">
-            <p>Search recipe or ingredients</p>
             <form databind="submit: searchTags">
                 <input name="tagsinput" id="tagsinput" class="ingredientTags" valueUpdate="Clean,Fresh,Modern,Unique" />
                 <button class="btn btn-large btn-block" data-bind="click: searchTags" >Search</button>
@@ -84,6 +86,7 @@
         <section class="single-recipe" data-bind="visible: $root.showSingle">
             <span class="close-recipe fui-cross" data-bind="click: function(){$root.showSingle(false) ; $root.showSearchResults(true); $root.showSearchBar(true)}"></span>
             <h2 data-bind="text: $root.fullRecipeName"></h2>
+
             <ul data-bind="foreach: $root.fullRecipeIngredients">
                 <li data-bind="text: $data"></li>
             </ul>
@@ -113,6 +116,7 @@
         <div class="favourite-list" data-bind="visible: $root.favouriteList">
             <p class="saved-recipes-counter">You have <span data-bind="text: $root.favourites().length"></span> saved recipes</p>
             <!--<pre data-bind="text: ko.toJSON($root.favourites(), null, 2)"></pre> -->
+            <div class="arrow-decoration"></div>
 
             <ul class="list" data-bind="foreach: $root.favourites()">
                 <li class="list-item" data-bind="click:   function(data, event) { $root.openFavourite( $data , data, event) } "> 
@@ -125,7 +129,9 @@
                 </li>
             </ul>
 
-            <div class="btn btn-large btn-block delete-btn"  data-bind="click: $root.clearStorage" >Delete all favourites</div>
+            <div class="delete-btn">
+                <button class="btn btn-large btn-block"  data-bind="click: $root.clearStorage" >Delete all favourites</button>
+            </div>
 
         </div><!-- favouriteList -->
 
@@ -133,6 +139,7 @@
             <span class="close-recipe fui-cross" data-bind="click: function(){$root.singleFavourite(false) ; $root.favouriteList(true);}"></span>
 
             <h2 data-bind="text: $root.favouriteName"></h2>
+            <div class="arrow-decoration"></div>
             
             <ul data-bind="foreach: $root.favouriteIngredients">
                 <li data-bind="text: $data"></li>
