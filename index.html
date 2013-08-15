@@ -41,13 +41,15 @@
 
     <section data-bind="visible: $root.showSearch" class="search">
 
+
+           
+        <div data-bind="visible: $root.showSearchBar" class="search-wrap">
+
             <div class="saved-recipes-counter">
                 <p>Search recipe or ingredients</p>
             </div>
 
             <div class="arrow-decoration"></div>
-           
-        <div data-bind="visible: $root.showSearchBar" class="search-wrap">
             <form databind="submit: searchTags">
                 <input name="tagsinput" id="tagsinput" class="ingredientTags" valueUpdate="Clean,Fresh,Modern,Unique" />
                 <button class="btn btn-large btn-block" data-bind="click: searchTags" >Search</button>
@@ -89,6 +91,8 @@
         <section class="single-recipe single-search-result" data-bind="visible: $root.showSingle">
             <span class="close-recipe fui-cross" data-bind="click: function(){$root.showSingle(false) ; $root.showSearchResults(true); $root.showSearchBar(true)}"></span>
             <h2 data-bind="text: $root.fullRecipeName"></h2>
+            <div class="arrow-decoration"></div>
+
 
             <ul data-bind="foreach: $root.fullRecipeIngredients">
                 <li data-bind="text: $data"></li>

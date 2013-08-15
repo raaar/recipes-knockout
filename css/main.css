@@ -85,9 +85,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6d1f27', end
 }
 
 .search-wrap {
-    margin: 20px auto 50px;
-    padding: 0 4%;
+    margin: 0 auto 50px;
+}
+.search-wrap  form{
     width: 92%;
+    margin: 20px auto 0;
 }
 
 .ingredient {
@@ -277,8 +279,8 @@ p, h2, .single-recipe li, .list-arrow, .save-to-favourites span ,footer {
     padding: 60px 4% 10px;
 }
 
-.single-search-result  h2 {
-    background: transparent !important;
+.search ul {
+    margin-bottom: 0;
 }
 
 .single-recipe ul {
