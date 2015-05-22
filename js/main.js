@@ -28,7 +28,7 @@ function IngredientsViewModel() {
 		var yummlyJson = 'http://api.yummly.com/v1/api/recipes?_app_id=3d201ae5&_app_key=9da85e4d69408c34a30d4afa7ce7c549&q='+ terms +'&callback=?';
 		
 		$.getJSON( yummlyJson , function(data) {
-    		console.log(data);	
+    		//console.log(data);	
     		self.firstName(data.matches);
 		});	
 	}
@@ -60,7 +60,7 @@ function IngredientsViewModel() {
 		
 		$.getJSON( yummlyJson , function(data) {
 
-    		console.log(data);
+    		//console.log(data);
     		
     		self.firstName(data.matches);
 
